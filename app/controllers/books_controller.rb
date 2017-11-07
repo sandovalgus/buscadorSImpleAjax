@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.where(["name LIKE ?", "%#{params[:search]}%"] )
+    @books = @books.page(params[:page]).per(50)
       respond_to do |format|
         format.html
         format.js

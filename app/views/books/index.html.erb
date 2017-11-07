@@ -15,39 +15,10 @@
 <div id="items_grid">
   <%= render "tabla"%>
 </div>
-<p>peterpateatraseros</p>
 
 <br>
+<%= paginate @books %>
 
+<br>
 <%= link_to 'New Book', new_book_path %>
 
-<!-- <script type="text/javascript">
-  
-      $("#buscar").click(function(){
-         // alert("The button was clicked.");
-         var buscando = document.getElementById('search').value;
-
-
-         console.log("id de la zona ");
-         $.ajax({
-           url: "/books/",
-           type: "get",
-           data: {  
-           
-            "search":buscando
-          },
-           dataType: "json",
-           success: function(data) {
-
-               console.log(data);
-                   // $("#items_grid").empty();
-                   // $("#items_grid").append("<div id=\"items_grid\"><%= escape_javascript(render 'tabla') %></div>");
-
-
-
-
-   
-             }
-           });
-   });
-</script> -->
