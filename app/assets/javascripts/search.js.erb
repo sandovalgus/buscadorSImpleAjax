@@ -1,0 +1,20 @@
+    $("#buscar").click(function(){
+         // alert("The button was clicked.");
+         var buscando = document.getElementById('search').value;
+
+
+         console.log("id de la zona ");
+         $.ajax({
+           url: "/books/buscar",
+           type: "get",
+           data: {  
+           
+            "search":buscando
+          },
+           dataType: "json",
+           success: function(data) {
+
+               console.log(data);
+             }
+           });
+   });
